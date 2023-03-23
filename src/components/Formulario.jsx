@@ -23,7 +23,11 @@ export const Formulario = (props) => {
       quantidade: quantidade,
       valor: valor,
     };
-    props.quandoAdicionar(negociacao);
+    if (data != "" && quantidade != 0 && valor != 0){
+      props.quandoAdicionar(negociacao);
+    }else{
+      alert('Os campos não podem estar vazios')
+    }
 
     // Bônus: resetar os campos após a inserção
     zeraCampos();
